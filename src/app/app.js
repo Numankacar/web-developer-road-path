@@ -8,13 +8,13 @@ import HomeController from './Home/HomeController';
 
 import servicesModule from './Services';
 import itemsModule from './items-module';
+import addModule from './add';
 
 
 
 angular.module('myApp',
 	[
-		uirouter, servicesModule, itemsModule
+		uirouter, servicesModule, itemsModule, addModule, 
 	])
 	.config(appConfig)
 	.controller('HomeController', HomeController);
-
