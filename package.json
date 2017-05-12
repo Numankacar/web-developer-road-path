@@ -31,7 +31,7 @@
     "angular-cookies": "^1.4.8",
     "angular-local-storage": "^0.2.2",
     "angular-translate": "^2.8.1",
-    "angular-ui-router": "^0.2.15",
+    "angular-ui-router": "^0.3.2",
     "angularjs-toaster": "^0.4.15",
     "bootbox": "^4.4.0",
     "bootstrap": "^3.3.6",

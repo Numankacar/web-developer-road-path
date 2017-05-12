@@ -4,9 +4,7 @@ export default class ItemService {
         this.$q = $q;
     }
 
-    findAll() {
-
-        
+    findAll() {        
 
 
     }
