@@ -1,6 +1,6 @@
 import angular from 'angular';
 import uirouter from 'angular-ui-router';
-
+import firebase from 'angularfire';
 
 import appConfig from './app.config';
 
@@ -14,7 +14,7 @@ import addModule from './add';
 
 angular.module('myApp',
 	[
-		uirouter, servicesModule, itemsModule, addModule, 
+		uirouter, firebase, servicesModule, itemsModule, addModule,
 	])
 	.config(appConfig)
 	.controller('HomeController', HomeController);

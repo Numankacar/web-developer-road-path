@@ -3,7 +3,7 @@ import uirouter from 'angular-ui-router';
 
 import config from './items.config';
 import ItemsController from './items.controller';
-import ItemService from '../Services/item.service'
+import ItemService from '../Services/item.service';
 
 
 export default angular.module('myApp.items', [uirouter])
