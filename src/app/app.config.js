@@ -3,7 +3,7 @@
 export default  function configutator($stateProvider, $urlRouterProvider, $locationProvider ) {
 
     $locationProvider.hashPrefix('!');
-    $urlRouterProvider.otherwise('/items');
+    $urlRouterProvider.otherwise('/roadpath');
 }
 
 configutator.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];

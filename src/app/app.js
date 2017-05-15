@@ -7,14 +7,15 @@ import appConfig from './app.config';
 import HomeController from './Home/HomeController';
 
 import servicesModule from './Services';
-import itemsModule from './items-module';
+import roadpath from './roadPath';
 import addModule from './add';
 
 
 
 angular.module('myApp',
 	[
-		uirouter, firebase, 'autocomplete', servicesModule, itemsModule, addModule,
+		uirouter, firebase, 'autocomplete', servicesModule,  addModule,
+		roadpath,
 	])
 	.config(appConfig)
 	.controller('HomeController', HomeController);
