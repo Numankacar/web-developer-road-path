@@ -6,35 +6,35 @@
 
             <div class="form-group">
                 <label>Name</label>
-                <input type="text" class="form-control">
+                <input type="text" ng-model="vm.newNode.name" class="form-control">
             </div>
 
             <div class="form-group">
                 <label>Thumbnail Url</label>
-                <input type="text" class="form-control">
+                <input type="text" ng-model="vm.newNode.thumbnailUrl" class="form-control">
             </div>
 
             <div class="form-group">
                 <label>Description</label>
-                <input type="text" class="form-control">
+                <input type="text" ng-model="vm.newNode.description" class="form-control">
             </div>
 
             <div class="form-group">
                 <label>Who Are Using</label>
-                <input type="text" class="form-control">
+                <input type="text" ng-model="vm.newNode.whoIsUsed" class="form-control">
             </div>
 
             <div class="form-group">
                 <label>Release Date</label>
-                <input type="text" class="form-control">
+                <input type="text" ng-model="vm.newNode.releaseDate" class="form-control">
             </div>
 
             <div class="form-group">
                 <label>Additional Info</label>
-                <input type="text" class="form-control">
+                <input type="text" ng-model="vm.newNode.additionalInfo" class="form-control">
             </div>
 
-            <button type="submit" ng-click="" class="btn btn-default">Submit</button>
+            <button type="submit" ng-click="vm.addNode()" class="btn btn-default">Submit</button>
 
 
         </form>
