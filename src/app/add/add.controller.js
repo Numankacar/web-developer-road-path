@@ -1,14 +1,13 @@
 
 export default class AddController {
     constructor($firebaseArray) {
-        this.databaseUrl = 'https://webdeveloperroadmap.firebaseio.com/offers';
-        this.fireRef = new Firebase(this.databaseUrl);
-        this.$firebaseArray = $firebaseArray;
 
-        // this.offers = this.$firebaseArray(this.fireRef);
+        var ref = firebase.database().ref().child('webDeveloperRoadmapTree');
+        this.firebaseArray = $firebaseArray;
+        this.pathsArray = this.firebaseArray(ref);
 
-        // this.offers.$add({name:'eren', surname:'yener'});
-        // this.message = "hello world";
+
+        // this.pathsArray.$add(//new path);
     }
 }
 
