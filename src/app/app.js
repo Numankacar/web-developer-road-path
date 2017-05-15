@@ -14,7 +14,7 @@ import addModule from './add';
 
 angular.module('myApp',
 	[
-		uirouter, firebase, servicesModule, itemsModule, addModule,
+		uirouter, firebase, 'autocomplete', servicesModule, itemsModule, addModule,
 	])
 	.config(appConfig)
 	.controller('HomeController', HomeController);

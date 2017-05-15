@@ -1,15 +1,36 @@
 
 export default class AddController {
-    constructor($firebaseArray) {
+    constructor($scope, $firebaseArray) {
 
+        var self = this;
         var ref = firebase.database().ref().child('webDeveloperRoadmapTree');
         this.firebaseArray = $firebaseArray;
         this.pathsArray = this.firebaseArray(ref);
+        this.$scope = $scope;
+        this.autoCompleteSuggestions = [];
+        this.selectedParentNode = '';
+        this.selectedParentNodeId = '';
+
+        this.pathsArray.$loaded().then(function(){
+            for (var path of self.pathsArray) {
+              self.autoCompleteSuggestions.push(path.name);
+            }
+       });
+
+       $scope.$watch('vm.selectedParentNode', function(value) {
+           if (value && value.length > 0) {
+               console.log(value);
+               var found = _.find(self.pathsArray, function (o) { return o.name === value; })
+
+               if(found != null){
+                   self.selectedParentNodeId = found.$id;
+               }
+           }
+       });
 
         this.newNode = null;
         this.resetNewNode();
 
-        // this.pathsArray.$add(//new path);
     }
 
     resetNewNode()
@@ -23,13 +44,26 @@ export default class AddController {
             additionalInfo:'',
             parentId: null
         };
+
+        this.selectedParentNode = '';
+        this.selectedParentNodeId = '';
     }
 
     addNode()
     {
-        this.pathsArray.$add(this.newNode);
-        this.resetNewNode();
+        var self = this;
+
+        if(self.newNode != null){
+            self.newNode.parentNodeId = self.selectedParentNodeId;
+        }
+
+        self.pathsArray.$add(self.newNode);
+        self.resetNewNode();
+    }
+
+    onParentNodeSelected(selected){
+        this.$parent.vm.selectedParentNode = selected;
     }
 }
 
-AddController.$inject = ['$firebaseArray'];
+AddController.$inject = ['$scope', '$firebaseArray'];

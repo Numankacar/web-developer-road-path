@@ -34,6 +34,11 @@
                 <input type="text" ng-model="vm.newNode.additionalInfo" class="form-control">
             </div>
 
+            <div class="form-group">
+                <label>Parent</label>
+                <autocomplete ng-model="yourchoice" data="vm.autoCompleteSuggestions" on-select="vm.onParentNodeSelected" ></autocomplete>
+            </div>
+
             <button type="submit" ng-click="vm.addNode()" class="btn btn-default">Submit</button>
 
 
