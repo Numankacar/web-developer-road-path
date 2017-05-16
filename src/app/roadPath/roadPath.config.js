@@ -1,7 +1,7 @@
 
 
 export default function config($stateProvider) {
-    $stateProvider.state('roadPath', {
+    $stateProvider.state('roadpath', {
         url: '/roadpath',
         views: {
             'main': {
