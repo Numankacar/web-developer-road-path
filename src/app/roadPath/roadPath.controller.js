@@ -19,15 +19,28 @@ export default class RoadPathController {
 
                 if(!!parent){
                     var child = path;
-                    child.text = path.name;
+                    child.text =  {
+                        name:path.description,
+                        title:path.whoIsUsed
+                    };
+
                     child.parent = parent;
+                    child.collapsed = true;
                     child.parent.image = self.getImage(parent.name);
-                    child.parent.text = parent.name;
+                    child.parent.text = {
+                        name:parent.description,
+                        title:parent.whoIsUsed
+                    };
+                    child.parent.collapsed = true;
                     child.image = self.getImage(path.name);
                     self.tree.push(child);
                 }else{
                     var mother = path;
-                    mother.text = path.name;
+                    mother.text = {
+                        name:path.description,
+                        title:path.whoIsUsed
+                    }
+                    mother.collapsed = true;
                     mother.image = self.getImage(path.name);
                     self.tree.push(mother);
                 }
@@ -41,7 +54,7 @@ export default class RoadPathController {
     }
 
     getImage(text){
-        return ("https://placeholdit.imgix.net/~text?txtsize=33&txt="+ text + "&w=150&h=150");
+        return ("https://placeholdit.imgix.net/~text?txtsize=20&txt="+ text + "&w=150&h=150");
     }
 }
 

@@ -57,6 +57,8 @@ export default class AddController {
             self.newNode.parentNodeId = self.selectedParentNodeId;
         }
 
+        location.reload();
+
         self.pathsArray.$add(self.newNode);
         self.resetNewNode();
     }

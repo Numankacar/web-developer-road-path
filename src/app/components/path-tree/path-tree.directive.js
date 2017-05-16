@@ -21,7 +21,7 @@ export default class PathTreeDirective {
                 $(document).ready(function(){
                     var treeConfig = {
                         container: "#treeContainer",
-
+                        hideRootNode :false,
                         node: {
                             collapsable: true
                         }
