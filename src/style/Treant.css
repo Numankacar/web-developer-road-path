@@ -11,10 +11,17 @@
 .Treant > .node img {	border: none; float: left; }
 
 
-.chart { height: 600px; margin: 5px; width: 900px; }
+.chart { height: 900px; margin: 5px; width: 1360px; }
 .Treant > .node { padding: 3px; border: 1px solid #484848; border-radius: 3px; }
 .Treant > .node img { width: 100%; height: 100%; }
 
 .Treant .collapse-switch { width: 100%; height: 100%; border: none; }
 .Treant .node.collapsed { background-color: #DEF82D; }
 .Treant .node.collapsed .collapse-switch { background: none; }
+
+
+.Treant .node.collapsed {
+    background-color: #03A9F4 !important;
+    color: white !important;
+    font-weight: bold !important;
+}

@@ -54,7 +54,7 @@ export default class RoadPathController {
     }
 
     getImage(text){
-        return ("https://placeholdit.imgix.net/~text?txtsize=20&txt="+ text + "&w=150&h=150");
+        return ("https://placeholdit.imgix.net/~text?txtsize=20&txt="+ text + "&w=150&h=150&bg=ffff00&txtcolor=000");
     }
 }
 
