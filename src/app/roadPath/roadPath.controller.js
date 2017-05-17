@@ -7,7 +7,7 @@ export default class RoadPathController {
         this.firebaseArray = $firebaseArray;
         this.pathsArray = this.firebaseArray(ref);
         this.$scope = $scope;
-
+		this.loadingMessage = "loading...";
         this.tree = [];
         this.treeData = [];
 
@@ -45,10 +45,8 @@ export default class RoadPathController {
                     self.tree.push(mother);
                 }
             }
-
+			self.loadingMessage = "";
             self.treeData = self.tree;
-
-            // console.log(self.tree);
         });
 
     }
